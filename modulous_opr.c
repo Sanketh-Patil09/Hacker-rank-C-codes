@@ -1,3 +1,5 @@
+/*Given a five digit integer, print the sum of its digits.
+example: 10654=1+0+6+5+4=16*/
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
