@@ -3,11 +3,13 @@
 #include<time.h>
 int main()
 {
-    int no,num[10],n,i;
+    int no,num[10],n,i,choice;
     int sum=0;
+    int ans;
     srand(time(0));
     n= rand() % 5;
     FILE* fptr;
+    FILE* sptr;
     if(fptr==NULL)
     {
         printf("Error creating file.");
@@ -26,10 +28,29 @@ int main()
     {
     printf("%d ",num[i]=getw(fptr));
     }
+    fclose(fptr);
     for(i=0;i<n;i++)
     {
         sum=sum+num[i];
     }
-    printf("\nThe sum of numbers is: %d", sum);
-
+    sptr=fopen("sum.txt","w");
+    putw(sum,sptr);
+    fclose(sptr);
+    sptr=fopen("sum.txt","r");
+    printf("Enter a choice:\n1.Display answer\n2.exit");
+    scanf("%d",&choice);
+    if(choice==1)
+    {
+     ans=getw(sptr);   
+     fclose(sptr);
+    }
+    else if(choice==2)
+    {
+        exit (0);
+    }
+    else
+    {
+        printf("\nWrong choice entered");
+    }
+    
 }
