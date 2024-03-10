@@ -7,7 +7,7 @@ int main()
     int sum=0;
     int ans;
     srand(time(0));
-    n= rand() % 5;
+    n= rand() % 10;
     FILE* fptr;
     FILE* sptr;
     if(fptr==NULL)
@@ -37,11 +37,12 @@ int main()
     putw(sum,sptr);
     fclose(sptr);
     sptr=fopen("sum.txt","r");
-    printf("Enter a choice:\n1.Display answer\n2.exit");
+    printf("\nEnter a choice:\n1.Display answer\n2.exit");
     scanf("%d",&choice);
     if(choice==1)
     {
-     ans=getw(sptr);   
+     ans=getw(sptr); 
+     printf("%d",ans);  
      fclose(sptr);
     }
     else if(choice==2)
