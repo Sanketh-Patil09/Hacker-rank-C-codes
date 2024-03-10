@@ -15,6 +15,7 @@ int main()
         printf("Error creating file.");
         exit(0);
     }
+
     fptr= fopen("store.txt","w");
     for(i=0;i<n;i++)
     {
@@ -36,6 +37,8 @@ int main()
     sptr=fopen("sum.txt","w");
     putw(sum,sptr);
     fclose(sptr);
+    while(1)
+    {
     sptr=fopen("sum.txt","r");
     printf("\nEnter a choice:\n1.Display answer\n2.exit");
     scanf("%d",&choice);
@@ -52,6 +55,7 @@ int main()
     else
     {
         printf("\nWrong choice entered");
+    }
     }
     
 }
