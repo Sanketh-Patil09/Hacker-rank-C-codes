@@ -20,6 +20,7 @@ int main()
     for(i=0;i<n;i++)
     {
         no= (rand() % 50);
+        
         putw(no, fptr);
 
     }
